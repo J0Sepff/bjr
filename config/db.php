@@ -5,7 +5,7 @@ return [
     //'dsn' => 'mysql:host=localhost;port=8889;dbname=bjr',
     'dsn' => 'pgsql:host=localhost;port=5432;dbname=bjr',
     'username' => 'developer',
-    'password' => 'perlina1111',
+    'password' => 'password',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
