@@ -2,9 +2,10 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '',
+    //'dsn' => 'mysql:host=localhost;port=8889;dbname=bjr',
+    'dsn' => 'pgsql:host=localhost;port=5432;dbname=bjr',
+    'username' => 'developer',
+    'password' => 'perlina1111',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

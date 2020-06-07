@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -124,5 +126,36 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     * Displays upload page.
+     *
+     * @return string
+     */
+    public function actionUpload()
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->uploadFiles = UploadedFile::getInstances($model, 'uploadFiles');
+            if ($model->upload()) {
+                // file is uploaded successfully
+                return 'Файлы успешно загружены!';
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
+    }
+
+    /**
+     * Displays list page.
+     *
+     * @return string
+     */
+    public function actionList()
+    {
+        $data = 1;
+        return $this->render('list', ['data' => $data]);
     }
 }
